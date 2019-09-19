@@ -1,0 +1,51 @@
+body{
+    background-color: #ffffff;
+    font-family: 'Raleway', arial;
+}
+
+ul{
+    list-style-type: square;
+    color: #000000;
+}
+
+a{
+    text-decoration: none;
+    color: #3e3e3e;
+    
+}
+
+a:hover {
+    text-decoration: line-through;
+}
+
+.content {
+    margin: auto; 
+    padding-top: 5vh; 
+    padding-left: 5%; 
+    padding-right: 5%;
+    padding-bottom: 5px; 
+}
+
+.beskrivning {
+    display: inline-block;
+    width: 30%;
+    margin-right: 18%;
+    margin-left: 2%;
+}
+
+.projekt {
+     float: left;
+    display: inline-block;
+    width: 30%;
+    margin-left: 18%;
+    margin-right: 2%;
+    
+}
+.projekt h1{
+    text-align: center;
+}
+
+.projekt img {
+    border-radius: 10px;
+    margin: auto; 
+}
