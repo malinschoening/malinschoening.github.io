@@ -29,6 +29,7 @@ a:hover {
 .beskrivning {
     display: inline-block;
     width: 28%;
+    float: left;
     margin-right: 18%;
     margin-left: 2%;
 }
