@@ -10,18 +10,18 @@ const Portfolio = () => {
     <section id="portfolio">
       <div className='mobile-desktop-tablet'>
       <img src={tablet} />
-      <h2>Title</h2>
+      <h2>Coming soon..</h2>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur minus dolore quas modi laudantium deleniti.</p>
       </div>
       <div className='mobile-desktop-tablet'>
       <img src={mobile} />
-      <h2>Title</h2>
+      <h2>Coming soon..</h2>
       <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
       </div>
       <div className='mobile-desktop-tablet'>
       <a href="http://aminasmakar.se"><img src={desktop} /></a>
       <h2>Amina Smakar</h2>
-      <p>Company site</p>
+      <p>Catering company site</p>
       </div>
     </section>
     </>

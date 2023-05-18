@@ -9,6 +9,8 @@ import atom from './img/atom.png'
 
 const About = () => {
   return (
+    <>
+    <h3 className='title'>About me</h3>
     <section id="about">
         <div className="left-content">
           <img className="com-logo" src={atom} />
@@ -17,7 +19,6 @@ const About = () => {
           <img className="com-logo" src={js} />
         </div>
         <div className="center-content">
-            <h2>About me</h2><br/>
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
             Debitis est quis blanditiis quos architecto praesentium,
              qui odio inventore minima, quisquam ipsum! Repellat 
@@ -34,6 +35,7 @@ const About = () => {
           <img className="com-logo" src={figma} />
         </div>
     </section>
+    </>
   )
 }
 
