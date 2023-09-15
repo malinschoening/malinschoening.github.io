@@ -14,7 +14,7 @@ const Contact = () => {
       <a href="https://github.com/malinschoening"><img className='contact-social' src={github} /></a>
       <a href="https://www.facebook.com/malinschoening/"><img className='contact-social' src={facebook} /></a>
     </div>
-    <p>You can always send me an email at <a href="mailto:malin.schoening@gmail.com">malin.schoening@gmail.com</a></p>
+    <p>Feel free to send me an email at <a href="mailto:malin.schoening@gmail.com">malin.schoening@gmail.com</a> for questions, work collaborations or other inquiries.</p>
     </section>
     </>
     

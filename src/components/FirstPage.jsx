@@ -7,7 +7,7 @@ const FirstPage = () => {
     <div id="first-page">
         <img id="first-page-image" src={background} />
         <div><h1>Hello, my name is Malin Schoening</h1>
-        <h3>and welcome to jackass</h3></div>
+        <h3>A self-driven front-end developer. </h3></div>
     </div>
   )
 }

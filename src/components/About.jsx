@@ -19,15 +19,11 @@ const About = () => {
           <img className="com-logo" src={js} />
         </div>
         <div className="center-content">
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-            Debitis est quis blanditiis quos architecto praesentium,
-             qui odio inventore minima, quisquam ipsum! Repellat 
-             laudantium nemo natus esse veniam libero ipsum 
-             exercitationem?<br/><br/>
-             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi recusandae fugiat quas, vero reprehenderit laboriosam porro doloremque deleniti ab voluptas!
-             <br/><br/>
-             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum ex beatae explicabo sint, nisi obcaecati eius rerum nam doloribus ullam?
-             </p>
+            <p>I'm a front-end developer with knowledge in React, JavaScript, HTML, CSS and more. I've also been studing iOS development with Swift and Objective-C and Android development with Kotlin before I started this front-end developer program. The plan is to work as a front-end developer and study back-end development alongside my job.</p>
+              <br/><br/>
+              <p>In November it's time for my six month internship before graduating. So if you are interested in having me as an intern, or just to give me some advise, feel free to contact me &#128513; </p>
+            <br/>
+            <p>Previously I've been working as a nail technician which gave me plenty of experience in art, customer service and time efficiency. After a few years of working in the beauty industry I felt that I wanted to fulfill my dream -</p><h2>becoming a full-stack developer.</h2>
         </div>
         <div className="right-content">
         <img className="com-logo" src={photoshop} />
