@@ -1,30 +1,63 @@
 import React, {useState, useEffect} from 'react'
+import { NavLink, useLocation } from 'react-router-dom';
+import styled from 'styled-components';
 
-const Navigation = () => {
-    const [activeID, setActiveID] = useState('about');
+const Navigation = ({ refs }) => {
 
-    const links = [
-        { id: 'about', className: 'about', href: '#about', name: 'About'},
-        { id: 'portfolio', className: 'portfolio', href: '#portfolio', name: 'Portfolio'},
-        { id: 'contact', className: 'contact', href: '#contact', name: 'Contact'}
-    ]
+    const location = useLocation();
+
 
     useEffect(() => {
-    console.log(activeID);
-    }, [activeID]);
+    console.log("location", location.pathname);
+    switch (location.pathname) {
+      case "/about":
+        scrollSmoothHandler(refs.aboutRef);
+        break;
+      case "/portfolio":
+        scrollSmoothHandler(refs.portfolioRef);
+        break;
+      case "/contact":
+        scrollSmoothHandler(refs.contactRef);
+        break;
+
+      default:
+      // ignore
+    }
+  }, [location, refs]);
+
+  const scrollSmoothHandler = ref => {
+    console.log("Triggered.");
+    ref.current.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
-    <nav id="main-nav">
-        <ul>
-            {links.map((link) => 
-            <li key={link.id} onClick={() => setActiveID(link.id)}>
-            <a href={link.href}>{link.name}</a></li>
-            )}
-        </ul>
-        </nav>
+    <>
+      <AboutLink to="/about">
+        About
+      </AboutLink>
+      <PortfolioLink to="/portfolio">
+        Portfolio
+      </PortfolioLink>
+      <ContactLink to="/contact">
+        Contact
+      </ContactLink>
+    </>
   )
 }
 
-//import link 
-//<Link to
+const AboutLink = styled(NavLink)`
+  color: #ff4dd3;
+  font-size: 30px;
+`;
+
+const PortfolioLink = styled(NavLink)`
+  color: #37dd66;
+  font-size: 30px;
+`;
+
+const ContactLink = styled(NavLink)`
+  color: #c954ff;
+  font-size: 30px;
+`;
 
 export default Navigation
