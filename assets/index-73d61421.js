@@ -158,7 +158,7 @@ Error generating stack: `+o.message+`
   left: 0;
   background-color: #343434;
   z-index: 200;
-`,iC="/assets/mobile-9ae329b6.png",oC="/assets/desktop-2e30e717.png",sC="/assets/desktop2-250a2ff9.png",aC=E.forwardRef((e,t)=>ie(ms,{children:[A(lC,{ref:t,children:"Projects"}),ie(uC,{children:[ie(ja,{children:[A(tt.div,{whileHover:{scale:1.1},whileTap:{scale:.9},children:A(fo,{href:"https://gittest-frk22s.web.app/",target:"_blank",children:A(za,{src:sC})})}),A($a,{children:"Blog with Firebase server"}),A("p",{children:"Blog with Firebase server and MongoDB database."})]}),ie(ja,{children:[A(tt.div,{whileHover:{scale:1.1},whileTap:{scale:.9},children:A(fo,{href:"https://github.com/malinschoening/chat-app-auth",target:"_blank",children:A(za,{src:iC})})}),A($a,{children:"Chat app with authorization"}),A("p",{children:"Chat app made with React Native where you can register users and login. The users can chat with each other. "})]}),ie(ja,{children:[A(tt.div,{whileHover:{scale:1.1},whileTap:{scale:.9},children:A(fo,{href:"https://github.com/malinschoening/Amina-smakar",target:"_blank",children:A(za,{src:oC})})}),A($a,{children:"Amina Smakar"}),ie("p",{children:["Catering company site made with React.js, ",A(fo,{href:"http://aminasmakar.se",target:"_blank",children:"Click here to see the live site."})]})]})]})]})),lC=z.h3`
+`,iC="/assets/mobile-9ae329b6.png",oC="/assets/desktop-2e30e717.png",sC="/assets/desktop2-250a2ff9.png",aC=E.forwardRef((e,t)=>ie(ms,{children:[A(lC,{ref:t,children:"Projects"}),ie(uC,{children:[ie(ja,{children:[A(tt.div,{whileHover:{scale:1.1},whileTap:{scale:.9},children:A(fo,{href:"https://gittest-frk22s.web.app/",target:"_blank",children:A(za,{src:sC})})}),A($a,{children:"Blog with Firebase server"}),A("p",{children:"Blog with Firebase server and MongoDB database."})]}),ie(ja,{children:[A(tt.div,{whileHover:{scale:1.1},whileTap:{scale:.9},children:A(fo,{href:"https://github.com/malinschoening/chat-app-auth",target:"_blank",children:A(za,{src:iC})})}),A($a,{children:"Chat app with authorization"}),A("p",{children:"Chat app made with React Native where you can register users and login. The users can chat with each other. "})]}),ie(ja,{children:[A(tt.div,{whileHover:{scale:1.1},whileTap:{scale:.9},children:A(fo,{href:"https://github.com/malinschoening/aminasmakar",target:"_blank",children:A(za,{src:oC})})}),A($a,{children:"Amina Smakar"}),ie("p",{children:["Catering company site made with React.js, ",A(fo,{href:"http://aminasmakar.se",target:"_blank",children:"Click here to see the live site."})]})]})]})]})),lC=z.h3`
   font-size: 25px;
   font-weight: normal;
   text-align: center;
@@ -199,7 +199,7 @@ Error generating stack: `+o.message+`
   font-size: 25px;
 `,fo=z.a`
   color: #37dd66;
-`,cC="/assets/me-2b61ef2c.jpg",fC=()=>ie(dC,{children:[A(hC,{src:cC}),A(yC,{children:ie(gC,{children:[A(pC,{children:"Hello, my name is Malin Schoening"}),A(mC,{children:"A self-driven front-end developer. "})]})})]}),dC=z.div`
+`,cC="/assets/me-e466b68e.jpg",fC=()=>ie(dC,{children:[A(hC,{src:cC}),A(yC,{children:ie(gC,{children:[A(pC,{children:"Hello, my name is Malin Schoening"}),A(mC,{children:"A self-driven front-end developer. "})]})})]}),dC=z.div`
   width: 100%;
   display: flex;
   justify-content: center;
