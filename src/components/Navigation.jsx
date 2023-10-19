@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import { motion } from "framer-motion"
 import { NavLink, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -8,7 +9,6 @@ const Navigation = ({ refs }) => {
 
 
     useEffect(() => {
-    console.log("location", location.pathname);
     switch (location.pathname) {
       case "/about":
         scrollSmoothHandler(refs.aboutRef);
@@ -26,21 +26,32 @@ const Navigation = ({ refs }) => {
   }, [location, refs]);
 
   const scrollSmoothHandler = ref => {
-    console.log("Triggered.");
     ref.current.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
     <>
+    <motion.div
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}>
       <AboutLink to="/about">
         About
       </AboutLink>
+    </motion.div>
+    <motion.div
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}>
       <PortfolioLink to="/portfolio">
         Portfolio
       </PortfolioLink>
+    </motion.div>
+    <motion.div
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}>
       <ContactLink to="/contact">
         Contact
       </ContactLink>
+    </motion.div>
     </>
   )
 }

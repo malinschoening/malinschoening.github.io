@@ -1,12 +1,11 @@
 import React from 'react'
 import profile from './img/me.jpg'
-import background from './img/background.png'
 import styled from 'styled-components'
 
 const FirstPage = () => {
   return (
     <Container>
-        <HeaderImage src={background} />
+        <HeaderImage src={profile} />
         <TextContainer>
         {/* <LeftHeaderText><p>
 
@@ -50,11 +49,11 @@ const Container = styled.div`
 `;
 
 const HeaderImage = styled.img`
-  width: 90%;
-  border-bottom: 5px solid black;
+  width: 30%;
+  border-radius: 50%;
 
   @media only screen and (max-width: 1100px){
-    width: 98%;
+    width: 60%;
   }
 `;
 

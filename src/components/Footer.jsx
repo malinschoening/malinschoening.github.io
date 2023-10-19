@@ -1,4 +1,5 @@
 import React from 'react'
+import { motion } from "framer-motion"
 import github from './img/github.png'
 import linkedin from './img/linkedin.png'
 import facebook from './img/facebook.png'
@@ -7,9 +8,21 @@ import styled from 'styled-components'
 const Footer = () => {
   return (
     <Container>
-      <Link href="https://www.linkedin.com/in/malinschoening/"><Socials className='social-logo' src={linkedin} /></Link>
-      <Link href="https://github.com/malinschoening"><Socials className='social-logo' src={github} /></Link>
-      <Link href="https://www.facebook.com/malinschoening/"><Socials className='social-logo' src={facebook} /></Link>
+      <motion.div
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}>
+        <Link href="https://www.linkedin.com/in/malinschoening/" target="_blank"><Socials className='social-logo' src={linkedin} /></Link>
+      </motion.div>
+      <motion.div
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}>
+        <Link href="https://github.com/malinschoening" target="_blank"><Socials className='social-logo' src={github} /></Link>
+      </motion.div>
+      <motion.div
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}>
+        <Link href="https://www.facebook.com/malinschoening/" target="_blank"><Socials className='social-logo' src={facebook} /></Link>
+      </motion.div>
     </Container>
   )
 }

@@ -1,28 +1,55 @@
-import React, { forwardRef, useRef } from 'react'
+import React, { forwardRef, useRef, useState } from 'react'
+import { motion, AnimatePresence } from "framer-motion";
 import mobile from './img/mobile.png'
 import tablet from './img/tablet.png'
 import desktop from './img/desktop.png'
 import styled from 'styled-components'
+import desktop2 from './img/desktop2.png'
 
 const Portfolio = forwardRef((props, ref) => {
+
+  const projects = [
+    mobile,
+    desktop,
+    tablet
+  ];
+
   return (
     <>
     <Title ref={ref}>Projects</Title>
     <PortfolioSection>
       <Device>
-      <DeviceImage src={tablet} />
-      <DeviceTitle>Coming soon..</DeviceTitle>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur minus dolore quas modi laudantium deleniti.</p>
+        <motion.div
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}>
+            <Link href="https://gittest-frk22s.web.app/" target="_blank">
+              <DeviceImage src={desktop2} />
+              </Link>
+          </motion.div>
+        <DeviceTitle>Blog with Firebase server</DeviceTitle>
+        <p>Blog with Firebase server and MongoDB database.</p>
       </Device>
       <Device>
-      <Link href="https://github.com/malinschoening/chat-app-auth"><DeviceImage src={mobile} /></Link>
+      <motion.div
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}>
+          <Link href="https://github.com/malinschoening/chat-app-auth" target="_blank">
+            <DeviceImage src={mobile} />
+          </Link>
+       </motion.div>
       <DeviceTitle>Chat app with authorization</DeviceTitle>
       <p>Chat app made with React Native where you can register users and login. The users can chat with each other. </p>
       </Device>
       <Device>
-      <Link href="https://github.com/malinschoening/Amina-smakar"><DeviceImage src={desktop} /></Link>
+      <motion.div
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}>
+        <Link href="https://github.com/malinschoening/aminasmakar" target="_blank">
+          <DeviceImage src={desktop} />
+        </Link>
+      </motion.div>
       <DeviceTitle>Amina Smakar</DeviceTitle>
-      <p>Catering company site made with React.js, <Link href="http://aminasmakar.se">Click here to see the live site.</Link></p>
+      <p>Catering company site made with React.js, <Link href="http://aminasmakar.se" target="_blank">Click here to see the live site.</Link></p>
       </Device>
     </PortfolioSection>
     </>
