@@ -1,6 +1,11 @@
 html.dark {
     --sidebarBackground: #171717;
     --sidebarText: #FFFFFF;
+    --bodyBackground: #323232;
+    --secondaryBackground: rgba(21, 13, 30, 0.4);
+
+    --bubbleOne: rgba(21, 13, 30, 0.5);
+    --bubbleTwo: rgba(52, 10, 43, 0.5);
 
     --textPrimary: #171717;
 }

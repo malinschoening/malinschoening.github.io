@@ -1,5 +1,11 @@
-body {
+:root {
+    --borderRadius: 16px;
+}
 
+body {
+    background: var(--bodyBackground);
+    font-family: "Nunito", sans-serif!important;
+    font-weight: 200;
 }
 
 ul {
@@ -17,8 +23,31 @@ a:hover {
 
 }
 
+p {
+    font-size: 1.3rem;
+}
+
 .flex-center {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+h1,
+h2,
+h3 {
+    font-family: "New Amsterdam", sans-serif!important;
+    font-weight: 400;
+}
+
+h1 {
+    font-size: 3.5rem;
+}
+
+h2 {
+    font-size: 3rem;
+}
+
+h3 {
+    font-size: 2.5rem;
 }

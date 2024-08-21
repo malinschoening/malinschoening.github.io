@@ -6,20 +6,11 @@
 </script>
 
 <Sidebar />
-
 <main>
     <slot />
     <Footer />
 </main>
 
 <style>
-    main {
-        margin-left: 70px;
-    }
-
-    @media(min-width: 1200px){
-        main {
-            margin-left: 250px;
-        }
-    }
+    
 </style>
