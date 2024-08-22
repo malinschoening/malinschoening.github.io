@@ -27,22 +27,23 @@
         background: var(--sidebarBackground);
         color: var(--sidebarText);
         margin-top: -250px;
-        margin-left: -250px;
+        margin-left: -350px;
         transition: margin .4s ease-in-out, transform .4s ease-in-out;
         transform: rotate(25deg);
         z-index: 2000;
+        width: 300px;
     }
 
     aside:hover {
-        margin-top: -70px;
+        margin-top: -150px;
         transform: rotate(15deg);
         margin-left: -150px;
     }
 
     .menu-icon {
         transform: rotate(-25deg);
-        margin-left: 130px;
-        margin-top: 220px;
+        margin-left: 200px;
+        margin-top: 150px;
         transition: opacity .3s ease-in;
     }
 
@@ -51,6 +52,8 @@
     }
 
     nav{
+        padding-top: 50px;
+        padding-left: 20px;
         opacity: 0;
         transform: rotate(-15deg);
         transition: opacity 1s ease-out;
@@ -63,11 +66,5 @@
     li {
         font-size: 1.3rem;
         font-weight: 200;
-    }
-
-    @media(min-width: 1200px){
-        aside {
-            width: 300px;
-        }
     }
 </style>

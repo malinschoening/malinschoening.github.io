@@ -15,6 +15,6 @@
         <title>{data.meta.title}</title>
     {/if}
 </svelte:head>
-<div class="container">
+<div class="container mt-5">
 
 </div>

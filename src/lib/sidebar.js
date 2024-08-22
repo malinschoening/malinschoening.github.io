@@ -1,24 +1,25 @@
 import { BookText, BriefcaseBusiness, Mail, UserRound } from "lucide-svelte"
+import { base } from '$app/paths';
 
 let sidebar = [
     {
         name: 'About me',
-        url: '/about',
+        url: base + '/about',
         icon: UserRound
     },
     {
         name: 'Contact',
-        url: '/contact',
+        url: base + '/contact',
         icon: Mail
     },
     {
         name: 'Portfolio',
-        url: '/portfolio',
+        url: base + '/portfolio',
         icon: BriefcaseBusiness
     },
     {
         name: 'Resume',
-        url: '/resume',
+        url: base + '/resume',
         icon: BookText
     }
 ]

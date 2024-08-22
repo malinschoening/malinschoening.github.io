@@ -1,4 +1,6 @@
 <script>
+    import Portfolio from "../../components/Portfolio.svelte";
+
     export let data;
 </script>
 
@@ -8,3 +10,5 @@
         <title>{data.meta.title}</title>
     {/if}
 </svelte:head>
+
+<Portfolio />

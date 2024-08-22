@@ -12,9 +12,9 @@
     {/if}
 </svelte:head>
 
-<div class="container">
+<div class="container mt-5">
     <div class="row">
-        <div class="col-md-6 offset-md-1 my-auto">
+        <div class="col-md-7 my-auto">
             <ContactInfo />
         </div>
         <div class="col-md-4 offset-md-1 my-5">
