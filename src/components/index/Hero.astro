@@ -1,1 +1,35 @@
-<h1>HERO</h1>
+---
+
+---
+<script is:inline>
+    document.addEventListener("DOMContentLoaded", () => {
+        const header1 = document.getElementById("header1");
+        const header2 = document.getElementById("header2");
+
+        window.addEventListener("scroll", () => {
+            const scrollAmount = window.scrollY;
+
+            const moveFactor = 3;
+
+            header1.style.transform = `translateX(-${scrollAmount * moveFactor}px)`;
+            header2.style.transform = `translateX(${scrollAmount * moveFactor}px)`;
+        });
+    });
+</script>
+
+<section class="container-fluid hero d-flex align-items-center">
+    <div class="headlines mx-auto">
+        <h1 class="scroll-text" id="header1">MALIN SCHOENING</h1>
+        <h2 class="scroll-text" id="header2">I'm a front-end developer.</h2> 
+    </div>
+</section>
+
+<style>
+    .hero {
+        min-height: 90vh;
+    }
+    .scroll-text {
+        transition: transform 0.1s linear; /* Smooth transition for smaller scroll increments */
+        will-change: transform; /* Optimizes performance for transform animations */
+    }
+</style>

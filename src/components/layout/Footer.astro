@@ -1,1 +1,46 @@
-<h1>FOOTER</h1>
+---
+    let socials = [
+        {
+            label: 'Facebook',
+            url: '#',
+            icon: ""
+        },
+        {
+            label: 'Instagram',
+            url: '#',
+            icon: ""
+        },
+        {
+            label: 'LinkedIn',
+            url: "#",
+            icon: ""
+        },
+        {
+            label: 'Github',
+            url: "#",
+            icon: ""
+        }
+    ]
+
+---
+
+<footer class="mt-auto container">
+    <div class="row">
+        <ul class="d-flex align-items-center justify-content-evenly">
+            {socials && socials.map(media => 
+                <li>
+                    <a href={media.url}>
+                        {media.label}
+                    </a>
+                </li>
+            )}
+        </ul>
+    </div>
+    <div class="row mt-2 mt-md-3 mt-lg-4 mt-xl-5">
+        <div class="col-12">
+            <p class="text-center">
+                Copyright 2024 - Malin Schoening
+            </p>
+        </div>
+    </div>
+</footer>

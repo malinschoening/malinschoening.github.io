@@ -1,0 +1,40 @@
+:root {
+    --pink: rgb(255, 0, 106);
+    --orange: rgb(245, 121, 5);
+    --purple: rgb(173, 5, 245);
+    --blue: rgb(5, 245, 193);
+    --text-color: white;
+    --background: rgb(2, 2, 2);
+    --background-transparent: rgba(2,2,2,0.8);
+}
+
+body {
+    background: var(--background);
+    color: var(--text-color);
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 1px;
+    min-height: 200vh;
+}
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+a {
+    background: linear-gradient(to right, var(--pink), var(--orange));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    transition: background .4s ease-in-out, color .4s ease-in-out;
+}
+a:hover {
+    background: linear-gradient(to right, var(--purple), var(--pink));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
