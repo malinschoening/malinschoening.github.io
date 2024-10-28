@@ -4,16 +4,19 @@
     --purple: rgb(173, 5, 245);
     --blue: rgb(5, 245, 193);
     --text-color: white;
+    --text-secondary: rgba(255,255,255,0.5);
     --background: rgb(2, 2, 2);
+    --card-background: rgb(19, 19, 19);
     --background-transparent: rgba(2,2,2,0.8);
+    --border-radius: 16px;
+    --border-color: rgba(255, 255, 255, 0.1);
 }
 
 body {
     background: var(--background);
     color: var(--text-color);
     font-family: 'Inter', sans-serif;
-    letter-spacing: 1px;
-    min-height: 200vh;
+    letter-spacing: 2px;
 }
 .flex-center {
     display: flex;
@@ -24,6 +27,15 @@ ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
+}
+.card {
+    border-radius: var(--border-radius);
+    background: var(--card-background);
+    color: var(--text-color);
+}
+.card-header,
+.card-footer {
+    border: none;
 }
 a {
     background: linear-gradient(to right, var(--pink), var(--orange));
@@ -37,4 +49,28 @@ a:hover {
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+}
+h5 {
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: 4px;
+    font-weight: 200;
+}
+.badge {
+    position: relative;
+    text-transform: uppercase;
+    font-weight: 200;
+    letter-spacing: 3px;
+    font-size: 0.7rem;
+    border-radius: 30px;
+    background: var(--card-background);
+    border: 1px solid var(--border-color);
+    z-index: 0;
+}
+
+
+@media(min-width: 992px){
+    p {
+        font-size: 1.1rem;
+    }
 }

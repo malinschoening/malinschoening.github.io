@@ -1,0 +1,72 @@
+---
+    let experience = [
+        {
+            span: '2024-Now',
+            label: 'Front-end Developer',
+            type: 'Employee'
+        },
+        {
+            span: '2022-2024',
+            label: 'Front-end Development',
+            type: 'Higher Vocational Education'
+        },
+        {
+            span: '2017-2023',
+            label: 'Expert Nail Tech',
+            type: 'Self-employed'
+        },
+        {
+            span: '2018-2019',
+            label: 'Mobile-app Development',
+            type: 'Higher Vocational Education'
+        },
+        {
+            span: '2014-2017',
+            label: 'Information and Media Technology',
+            type: 'High School'
+        }
+    ]
+---
+<section class="experience">
+    <div class="card">
+        <div class="card-header">
+            <h5>Experience</h5>
+        </div>
+        <div class="card-body pt-0">
+            <ul>
+                {experience && experience.map(role => 
+                    <li class="py-1 py-sm-2 py-lg-3 d-flex align-items-center justify-content-between">
+                        <span class="timespan">
+                            {role.span}
+                        </span>
+                        <span class="role text-end">
+                            <h6 class="mb-0">{role.label}</h6>
+                            <span class="badge">{role.type}</span>
+                        </span>
+                    </li>
+                )}
+            </ul>
+        </div>
+    </div>
+</section>
+
+<style>
+    .timespan {
+        color: var(--text-secondary);
+    }
+    li {
+        gap: 0.5rem;
+    }
+
+    @media(min-width: 992px){
+        li {
+            gap: 1rem;
+        }
+    }
+
+    @media(min-width: 1200px){
+        li {
+            gap: 1.5rem;
+        }
+    }
+</style>
