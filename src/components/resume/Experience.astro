@@ -1,72 +1,102 @@
 ---
-    let experience = [
-        {
-            span: '2024-Now',
-            label: 'Front-end Developer',
-            type: 'Employee'
-        },
-        {
-            span: '2022-2024',
-            label: 'Front-end Development',
-            type: 'Higher Vocational Education'
-        },
-        {
-            span: '2017-2023',
-            label: 'Expert Nail Tech',
-            type: 'Self-employed'
-        },
-        {
-            span: '2018-2019',
-            label: 'Mobile-app Development',
-            type: 'Higher Vocational Education'
-        },
-        {
-            span: '2014-2017',
-            label: 'Information and Media Technology',
-            type: 'High School'
-        }
-    ]
+import Stack from "./Stack.astro";
+
+const stack = ["Svelte", "Astro", "PHP", "Google Ads", "Figma"];
 ---
-<section class="experience">
-    <div class="card">
-        <div class="card-header">
-            <h5>Experience</h5>
+
+<style>
+  .headline {
+    font-size: 4rem;
+  }
+
+  .category-wrapper {
+    position: relative;
+    width: 100%;
+    height: 5rem; 
+    overflow: visible;
+  }
+
+  .category {
+    top: -2rem;
+    right: 0;
+    font-size: 4rem;
+    font-weight: 400;
+    color: var(--purple);
+    font-family: var(--font-big);
+    position: absolute;
+    width: 100%;
+    white-space: nowrap;
+    transform-origin: center bottom;
+    transform: rotateX(90deg);
+    opacity: 0;
+    transition: transform 0.6s ease, opacity 0.6s ease;
+  }
+
+  @media(min-width: 768px){
+    .category {
+        font-size: 6rem;
+    }
+  }
+
+  .category.show {
+    transform: rotateX(0deg); 
+    opacity: 1;
+  }
+
+  .category.hide {
+    transform: rotateX(-90deg);
+    opacity: 0;
+  }
+  .subtitle-flip {
+    margin-top: 1.5rem;
+  }
+</style>
+
+<section class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="headline">I know</div>
+            <div class="category-wrapper">
+                {stack.map((category, index) => (
+                <span class="category" data-category={category} data-index={index}>{category}</span>
+                ))}
+            </div>
+            <p class="subtitle-flip">
+                Lorem ipsum dolor sit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus asperiores cupiditate itaque numquam dolore voluptatum soluta aperiam, omnis ut alias reiciendis ullam consequatur fugiat impedit rem a iure, quod similique.
+            </p>
         </div>
-        <div class="card-body pt-0">
-            <ul>
-                {experience && experience.map(role => 
-                    <li class="py-1 py-sm-2 py-lg-3 d-flex align-items-center justify-content-between">
-                        <span class="timespan">
-                            {role.span}
-                        </span>
-                        <span class="role text-end">
-                            <h6 class="mb-0">{role.label}</h6>
-                            <span class="badge">{role.type}</span>
-                        </span>
-                    </li>
-                )}
-            </ul>
+        <div class="col-md-6 col-lg-5 offset-lg-1">
+            <Stack />
         </div>
     </div>
 </section>
-
-<style>
-    .timespan {
-        color: var(--text-secondary);
+<script is:inline>
+    const categories = Array.from(document.querySelectorAll(".category"));
+    const images = Array.from(document.querySelectorAll(".stack-image"));
+    let currentIndex = 0;
+  
+    function showNextCategory() {
+      const currentCategory = categories[currentIndex];
+      const nextIndex = (currentIndex + 1) % categories.length;
+      const nextCategory = categories[nextIndex];
+      
+      currentCategory.classList.remove("show");
+      currentCategory.classList.add("hide");
+      
+      nextCategory.classList.remove("hide");
+      nextCategory.classList.add("show");
+  
+      images.forEach(image => image.style.opacity = '0.4');
+      
+      const nextCategoryText = nextCategory.dataset.category;
+      const nextImage = images.find(image => image.dataset.category === nextCategoryText);
+      if (nextImage) {
+        nextImage.style.opacity = '1';
+      }
+  
+      currentIndex = nextIndex;
     }
-    li {
-        gap: 0.5rem;
-    }
-
-    @media(min-width: 992px){
-        li {
-            gap: 1rem;
-        }
-    }
-
-    @media(min-width: 1200px){
-        li {
-            gap: 1.5rem;
-        }
-    }
-</style>
+  
+    setInterval(showNextCategory, 2000);
+    showNextCategory(); 
+  </script>

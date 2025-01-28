@@ -1,0 +1,59 @@
+---
+const stack = [
+    {
+        id: "0",
+        category: "Svelte",
+        url: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Svelte_Logo.svg/1702px-Svelte_Logo.svg.png",
+    },
+    {
+        id: "1",
+        category: "Astro",
+        url: "https://img.icons8.com/nolan/512/astro-js.png",
+    },
+    {
+        id: "2",
+        category: "PHP",
+        url: "https://cdn2.iconfinder.com/data/icons/designer-skills/128/code-programming-php-software-develop-command-language-512.png",
+    },
+    {
+        id: "3",
+        category: "Google Ads",
+        url: "https://star-marketing.com.ua/wp-content/uploads/2023/05/adwords.png",
+    },
+    {
+        id: "4",
+        category: "Figma",
+        url: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Figma-logo.svg/1200px-Figma-logo.svg.png",
+    },
+];
+---
+
+<section class="stack container-fluid px-0 mx-0">
+    <div class="row g-3 row-cols-2 row-cols-md-3 row-cols-lg-4">
+        {
+            stack &&
+                stack.map((item) => (
+                    <div class="col">
+                        <img
+                            id={item.id + "-image"}
+                            src={item.url}
+                            alt={item.category}
+                            class="stack-image"
+                            data-category={item.category}
+                        />
+                    </div>
+                ))
+        }
+    </div>
+</section>
+
+<style>
+    .stack-image {
+        max-height: 100%;
+        max-width: 100%;
+        opacity: 0.4;
+        transition: opacity 0.3s ease-in-out, transform 0.1s ease-in-out; /* Adjusted transform transition time */
+        position: relative;
+    }
+</style>
+

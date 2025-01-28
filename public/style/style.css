@@ -4,39 +4,146 @@
     --purple: rgb(173, 5, 245);
     --blue: rgb(5, 245, 193);
     --text-color: white;
-    --text-secondary: rgba(255,255,255,0.5);
-    --background: rgb(2, 2, 2);
-    --card-background: rgb(19, 19, 19);
-    --background-transparent: rgba(2,2,2,0.8);
+    --text-secondary: rgba(255, 255, 255, 0.5);
+    --background: rgb(0, 0, 0);
+    --background-light: rgb(2, 2, 2);
+    --background-fully-transparent: rgba(2, 2, 2, 0);
+    --card-background: rgba(25, 25, 25, 0.6);
+    --background-transparent: rgba(2, 2, 2, 0.8);
     --border-radius: 16px;
     --border-color: rgba(255, 255, 255, 0.1);
+    --font-big: "Bebas Neue", sans-serif;
+    --font-regular: "Open Sans", sans-serif;
+}
+
+h1 {
+    font-family: var(--font-big);
 }
 
 body {
     background: var(--background);
     color: var(--text-color);
-    font-family: 'Inter', sans-serif;
+    font-family: 'Outfit', sans-serif;
     letter-spacing: 2px;
+    font-weight: 200;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: relative;
 }
+
+.clouds-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+  }
+  
+  .cloud-animation {
+    position: fixed;
+    top: 30%;
+    left: 0;
+    height: auto;
+    transform-origin: center;
+    opacity: 0.7;
+    animation: cloudMovement 30s infinite ease-in-out;
+  }
+  
+  @keyframes cloudMovement {
+    0% {
+      transform: translateX(-5%) translateY(0); 
+    }
+    25% {
+      transform: translateX(20%) translateY(-10%);
+    }
+    50% {
+      transform: translateX(90%) translateY(20%);
+    }
+    75% {
+      transform: translateX(40%) translateY(-15%); 
+    }
+    100% {
+      transform: translateX(-5%) translateY(0); 
+    }
+  }
+  
+  .cloud1 {
+    top: -10%;
+    animation-duration: 30s;
+    animation-delay: 0s;
+  }
+  
+  .cloud2 {
+    right: 0;
+    top: 50%;
+    animation-duration: 35s;
+    animation-delay: -5s;
+  }
+  
+  .cloud3 {
+    bottom: 0;
+    left: 10%;
+    animation-duration: 40s;
+    animation-delay: -10s;
+  }
 .flex-center {
     display: flex;
     align-items: center;
     justify-content: center;
 }
+
 ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
 }
+
 .card {
     border-radius: var(--border-radius);
     background: var(--card-background);
+    backdrop-filter: blur(3px);
     color: var(--text-color);
 }
+
+.blurred-gradient-border {
+    position: relative;
+    padding: 20px;
+    border-radius: 15px;
+    background: var(--card-background);
+    backdrop-filter: blur(10px);
+    color: white;
+    z-index: 1;
+    overflow: hidden;
+    mask-image: linear-gradient(white, white);
+    padding: 1px;
+}
+
+.blurred-gradient-border::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(230, 176, 244, 0.2), var(--card-background));
+    border-radius: inherit;
+    padding: 1px;
+    -webkit-mask:
+        linear-gradient(white, white) content-box,
+        linear-gradient(white, white);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+    z-index: -1;
+}
+
 .card-header,
 .card-footer {
     border: none;
+    background: transparent !important;
 }
+
 a {
     background: linear-gradient(to right, var(--pink), var(--orange));
     -webkit-background-clip: text;
@@ -44,18 +151,21 @@ a {
     color: transparent;
     transition: background .4s ease-in-out, color .4s ease-in-out;
 }
+
 a:hover {
     background: linear-gradient(to right, var(--purple), var(--pink));
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
 }
+
 h5 {
     text-transform: uppercase;
     font-size: 1rem;
     letter-spacing: 4px;
     font-weight: 200;
 }
+
 .badge {
     position: relative;
     text-transform: uppercase;
@@ -68,8 +178,65 @@ h5 {
     z-index: 0;
 }
 
+/* Apply gradient animation to .btn-primary */
+.btn-primary {
+    background: linear-gradient(45deg, var(--orange), var(--pink));
+    /* Initial gradient */
+    background-size: 400%;
+    /* Set a larger background size to allow for animation */
+    color: white;
+    /* Text color */
+    border: none;
+    /* Remove default button border */
+    padding: 12px 24px;
+    /* Button padding */
+    font-size: 16px;
+    /* Font size */
+    cursor: pointer;
+    /* Pointer cursor on hover */
+    transition: all 0.3s ease;
+    /* Smooth transition on hover */
+    border-radius: 8px;
+    /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    /* Light shadow for depth */
+    outline: none;
+    /* Remove outline */
+    position: relative;
+    overflow: hidden;
+    /* Hide overflow to keep rounded corners clean */
+}
 
-@media(min-width: 992px){
+/* Gradient animation */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+        /* Start position of the gradient */
+    }
+
+    50% {
+        background-position: 100% 50%;
+        /* Mid point of the gradient animation */
+    }
+
+    100% {
+        background-position: 0% 50%;
+        /* End position of the gradient animation */
+    }
+}
+
+/* Apply the gradient animation to the button */
+.btn-primary {
+    animation: gradientAnimation 4s ease infinite;
+    /* 4s duration, infinite loop */
+}
+
+.btn-primary:hover {
+    color: inherit;
+    background: inherit;
+}
+
+@media(min-width: 992px) {
     p {
         font-size: 1.1rem;
     }

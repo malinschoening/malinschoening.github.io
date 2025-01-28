@@ -1,0 +1,61 @@
+---
+import Card from "./Card.astro";
+
+const stuff = [
+  {
+    label: "Gaming Site",
+    img: "https://logometrica.se/wp-content/uploads/2024/06/placeholder-2.png", // Replace with an actual image URL
+    description: "A site for gamers to connect and play.",
+  },
+  {
+    label: "Portfolio",
+    img: "https://logometrica.se/wp-content/uploads/2024/06/placeholder-2.png", // Replace with an actual image URL
+    description: "Showcasing my work and achievements.",
+  },
+  {
+    label: "E-commerce",
+    img: "https://logometrica.se/wp-content/uploads/2024/06/placeholder-2.png", // Replace with an actual image URL
+    description: "An online store with a seamless shopping experience.",
+  },
+];
+---
+
+<div class="carousel owl-carousel mt-5 pt-5 container-fluid mx-0 px-0">
+  {stuff.map((card) => (
+    <Card {...card} />
+  ))}
+</div>
+
+<style>
+    .carousel {
+        width: 100%;
+    }
+</style>
+<script is:inline>
+    document.addEventListener("DOMContentLoaded", () => {
+      $(".owl-carousel").owlCarousel({
+        loop: true, 
+        margin: 24,
+        nav: true, 
+        autoplay: true, 
+        autoplayTimeout: 2000, 
+        autoplayHoverPause: true,
+        autoplaySpeed: 1000, 
+        smartSpeed: 1000,
+        responsive: {
+          0: {
+            items: 1.4, 
+          },
+          600: {
+            items: 2.6, 
+          },
+          1000: {
+            items: 3.6, 
+          },
+          1300: {
+            items: 4.7
+          }
+        },
+      });
+    });
+  </script>

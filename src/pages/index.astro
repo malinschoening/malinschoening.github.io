@@ -1,12 +1,22 @@
 ---
-import About from '../components/about/About.astro';
-import Hero from '../components/index/Hero.astro';
-import Projects from '../components/projects/Projects.astro';
-import Resume from '../components/resume/Resume.astro';
-import Layout from '../layouts/Layout.astro';
+import About from "../components/about/About.astro";
+import Contact from "../components/contact/Contact.astro";
+import CTA from "../components/index/CTA.astro";
+import Hero from "../components/index/Hero.astro";
+import Projects from "../components/projects/Projects.astro";
+import Resume from "../components/resume/Resume.astro";
+import Layout from "../layouts/Layout.astro";
 ---
 
 <head>
+	<link
+		rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+	/>
+	<link
+		rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+	/>
 	<title>Malin Schoening</title>
 </head>
 
@@ -15,4 +25,9 @@ import Layout from '../layouts/Layout.astro';
 	<About />
 	<Resume />
 	<Projects />
+	<Contact />
+	<CTA />
 </Layout>
+
+<script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>

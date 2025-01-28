@@ -26,10 +26,17 @@
 
 <style>
     .hero {
-        min-height: 90vh;
+        min-height: 80vh;
     }
     .scroll-text {
-        transition: transform 0.1s linear; /* Smooth transition for smaller scroll increments */
-        will-change: transform; /* Optimizes performance for transform animations */
+        transition: transform 0.1s linear;
+        will-change: transform;
+    }
+    h1 {
+        font-family: var(--font-big);
+        font-size: 10vw; /* Adjust these values as needed */
+        white-space: nowrap;
+        line-height: 60%;
+        letter-spacing: -2px;
     }
 </style>

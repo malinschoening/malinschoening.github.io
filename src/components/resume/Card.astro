@@ -1,0 +1,21 @@
+---
+import { ChevronRight } from "lucide-svelte";
+
+const { label, img, description } = Astro.props;
+---
+
+<a href="#" class="stuff-card d-flex flex-column">
+  <div class="image w-100">
+    <img src={img} alt={label} style="width: 100%; height: auto; border-radius: 12px;" />
+  </div>
+  <div class="pt-2 pt-lg-3 text d-flex justify-content-between">
+    <h3>{label}</h3>
+    <ChevronRight class="card-chevron" /> 
+  </div>
+</a>
+
+<style>
+    .stuff-card .image {
+        border-radius: var(--border-radius);
+    }
+</style>

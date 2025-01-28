@@ -1,24 +1,11 @@
 ---
-import ImageSlider from "../ImageSlider.astro";
 import Experience from "./Experience.astro";
-import Personal from "./Personal.astro";
-import ToolStack from "./ToolStack.astro";
+import Carousel from "./Carousel.astro";
 ---
 
 <section class="container py-3 py-lg-5">
     <div class="row">
-        <div class="col-12">
-            <h2>RESUME</h2>
-        </div>
-        <div class="col-md-6 col-xl-4 h-100">
-            <Personal />
-            <div class="pb-4"></div>
-            <ToolStack />
-        </div>
-        <div class="col-md-6 col-xl-8 h-100">
-            <Experience />
-            <div class="pb-4"></div>
-            <ImageSlider image="https://gratisography.com/wp-content/uploads/2024/10/gratisography-cool-cat-800x525.jpg" />
-        </div>
+        <Experience />
     </div>
 </section>
+<Carousel />
