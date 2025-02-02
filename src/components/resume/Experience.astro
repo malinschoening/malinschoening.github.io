@@ -5,68 +5,86 @@ const stack = ["Svelte", "Astro", "PHP", "Google Ads", "Figma"];
 ---
 
 <style>
-  .headline {
-    font-size: 4rem;
-  }
-
-  .category-wrapper {
-    position: relative;
-    width: 100%;
-    height: 5rem; 
-    overflow: visible;
-  }
-
-  .category {
-    top: -2rem;
-    right: 0;
-    font-size: 4rem;
-    font-weight: 400;
-    color: var(--purple);
-    font-family: var(--font-big);
-    position: absolute;
-    width: 100%;
-    white-space: nowrap;
-    transform-origin: center bottom;
-    transform: rotateX(90deg);
-    opacity: 0;
-    transition: transform 0.6s ease, opacity 0.6s ease;
-  }
-
-  @media(min-width: 768px){
-    .category {
-        font-size: 6rem;
+    .headline {
+        font-size: 4rem;
+        font-weight: 600;
     }
-  }
 
-  .category.show {
-    transform: rotateX(0deg); 
-    opacity: 1;
-  }
+    .category-wrapper {
+        position: relative;
+        width: 100%;
+        height: 5rem;
+        overflow: visible;
+    }
 
-  .category.hide {
-    transform: rotateX(-90deg);
-    opacity: 0;
-  }
-  .subtitle-flip {
-    margin-top: 1.5rem;
-  }
+    .category {
+        top: -2rem;
+        right: 0;
+        font-size: 4rem;
+        font-weight: 400;
+        color: var(--main);
+        font-family: var(--font-big);
+        position: absolute;
+        width: 100%;
+        white-space: nowrap;
+        transform-origin: center bottom;
+        transform: rotateX(90deg);
+        opacity: 0;
+        transition:
+            transform 0.6s ease,
+            opacity 0.6s ease;
+    }
+
+    @media (min-width: 768px) {
+        .category {
+            font-size: 6rem;
+        }
+    }
+    .divider {
+        background: var(--background-transparent);
+    }
+    .category.show {
+        transform: rotateX(0deg);
+        opacity: 1;
+    }
+
+    .category.hide {
+        transform: rotateX(-90deg);
+        opacity: 0;
+    }
+    .subtitle-flip {
+        margin-top: 1.5rem;
+    }
 </style>
 
-<section class="container">
-    <div class="row">
-        <div class="col-md-6">
-            <div class="headline">I know</div>
-            <div class="category-wrapper">
-                {stack.map((category, index) => (
-                <span class="category" data-category={category} data-index={index}>{category}</span>
-                ))}
+<section class="divider container-fluid fade-in-lazy py-3 py-md-4 py-xl-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="headline">I've used</div>
+                <div class="category-wrapper">
+                    {
+                        stack.map((category, index) => (
+                            <span
+                                class="category"
+                                data-category={category}
+                                data-index={index}
+                            >
+                                {category}
+                            </span>
+                        ))
+                    }
+                </div>
+                <p class="subtitle-flip">
+                    A collection of programming languages, frameworks, and
+                    software tools I have learned, explored, and used through my
+                    education and work experience - ranging from beginner to
+                    proficient across various projects and technologies.
+                </p>
             </div>
-            <p class="subtitle-flip">
-                Lorem ipsum dolor sit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus asperiores cupiditate itaque numquam dolore voluptatum soluta aperiam, omnis ut alias reiciendis ullam consequatur fugiat impedit rem a iure, quod similique.
-            </p>
-        </div>
-        <div class="col-md-6 col-lg-5 offset-lg-1">
-            <Stack />
+            <div class="col-md-6 col-lg-5 offset-lg-1">
+                <Stack />
+            </div>
         </div>
     </div>
 </section>
@@ -74,29 +92,31 @@ const stack = ["Svelte", "Astro", "PHP", "Google Ads", "Figma"];
     const categories = Array.from(document.querySelectorAll(".category"));
     const images = Array.from(document.querySelectorAll(".stack-image"));
     let currentIndex = 0;
-  
+
     function showNextCategory() {
-      const currentCategory = categories[currentIndex];
-      const nextIndex = (currentIndex + 1) % categories.length;
-      const nextCategory = categories[nextIndex];
-      
-      currentCategory.classList.remove("show");
-      currentCategory.classList.add("hide");
-      
-      nextCategory.classList.remove("hide");
-      nextCategory.classList.add("show");
-  
-      images.forEach(image => image.style.opacity = '0.4');
-      
-      const nextCategoryText = nextCategory.dataset.category;
-      const nextImage = images.find(image => image.dataset.category === nextCategoryText);
-      if (nextImage) {
-        nextImage.style.opacity = '1';
-      }
-  
-      currentIndex = nextIndex;
+        const currentCategory = categories[currentIndex];
+        const nextIndex = (currentIndex + 1) % categories.length;
+        const nextCategory = categories[nextIndex];
+
+        currentCategory.classList.remove("show");
+        currentCategory.classList.add("hide");
+
+        nextCategory.classList.remove("hide");
+        nextCategory.classList.add("show");
+
+        images.forEach((image) => (image.style.opacity = "0.4"));
+
+        const nextCategoryText = nextCategory.dataset.category;
+        const nextImage = images.find(
+            (image) => image.dataset.category === nextCategoryText,
+        );
+        if (nextImage) {
+            nextImage.style.opacity = "1";
+        }
+
+        currentIndex = nextIndex;
     }
-  
+
     setInterval(showNextCategory, 2000);
-    showNextCategory(); 
-  </script>
+    showNextCategory();
+</script>

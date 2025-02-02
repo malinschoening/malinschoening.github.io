@@ -1,0 +1,142 @@
+---
+
+---
+
+<div class="container py-3 py-md-4 py-xl-5 fade-in-lazy">
+    <div class="row">
+        <div class="col-md-6 d-none d-md-block"></div>
+        <div class="col-md-6">
+            <h2>Get in touch</h2>
+            <p class="subtitle">
+                Whether you're looking to collaborate, give some advice, or have
+                an exciting job opportunity - feel free to reach out! I'm always
+                open to connecting and sharing insights.
+            </p>
+            <form
+                action="https://formspree.io/f/xrbekyqj"
+                method="POST"
+                id="contact-form"
+            >
+                <div class="form-floating mb-2 mb-md-3">
+                    <input
+                        type="email"
+                        class="form-control"
+                        id="email"
+                        placeholder="name@example.com"
+                    />
+                    <label for="email">Email</label>
+                </div>
+                <div class="form-floating mb-2 mb-md-3">
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="name"
+                        placeholder="Name"
+                    />
+                    <label for="name">Name</label>
+                </div>
+                <div class="form-floating mb-2 mb-md-3">
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="company"
+                        placeholder="Company"
+                    />
+                    <label for="company">Company</label>
+                </div>
+                <div class="form-floating mb-2 mb-md-3">
+                    <textarea
+                        name="message"
+                        class="form-control"
+                        id="message"
+                        placeholder="message"></textarea>
+                    <label for="message">Message</label>
+                </div>
+                <button class="btn-primary btn w-100" type="submit">Send</button
+                >
+            </form>
+            <div class="alert contact-form-status mt-3"></div>
+        </div>
+    </div>
+</div>
+<script>
+    document
+        .querySelector("#contact-form")
+        .addEventListener("submit", async function (event) {
+            event.preventDefault();
+
+            // Ensure event.target is an HTMLFormElement
+            let form = event.target;
+
+            if (!(form instanceof HTMLFormElement)) {
+                console.error("The target is not a form element");
+                return;
+            }
+
+            let formData = new FormData(form);
+
+            let response = await fetch(form.action, {
+                method: form.method,
+                body: formData,
+                headers: { Accept: "application/json" },
+            });
+
+            let statusMessage = document.querySelector(".contact-form-status");
+
+            if (statusMessage instanceof HTMLElement) {
+                if (response.ok) {
+                    statusMessage.classList.add("alert-success");
+                    statusMessage.textContent =
+                        "Thank you for reaching out, I will get back to you shortly";
+                    form.reset();
+                } else {
+                    statusMessage.classList.add("alert-danger");
+                    statusMessage.textContent = "Oops! Something went wrong.";
+                }
+                statusMessage.style.opacity = "1";
+                setTimeout(() => {
+                    statusMessage.style.opacity = "0";
+                    statusMessage.classList.remove("alert-success");
+                    statusMessage.classList.remove("alert-danger");
+                    setTimeout(() => {
+                        statusMessage.textContent = "";
+                    }, 500);
+                }, 2000);
+            } else {
+                console.error(
+                    "Status message element not found or not an HTMLElement.",
+                );
+            }
+        });
+</script>
+<style>
+    form .alert {
+        opacity: 0;
+    }
+    .form-control {
+        border-radius: var(--border-radius);
+        background: var(--background-medium);
+        color: var(--text-color);
+        transition: border 0.3s ease-in-out;
+        border: 1px solid var(--sub);
+    }
+    .form-control:focus,
+    .form-control:active,
+    .form-control:focus-visible,
+    .form-control:focus-within {
+        background: var(--background-medium);
+        box-shadow: none;
+        border: 1px solid var(--main);
+        outline: none;
+    }
+    .form-floating > .form-control::placeholder {
+        visibility: hidden;
+    }
+    .form-floating > .form-control:focus ~ label,
+    .form-floating > .form-control ~ label {
+        color: var(--main);
+    }
+    label::after {
+        background: transparent !important;
+    }
+</style>
