@@ -1,66 +1,9 @@
----
-const stack = [
-    {
-        id: "0",
-        category: "Svelte",
-        url: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Svelte_Logo.svg/1702px-Svelte_Logo.svg.png",
-    },
-    {
-        id: "1",
-        category: "Astro",
-        url: "https://img.icons8.com/nolan/512/astro-js.png",
-    },
-    {
-        id: "2",
-        category: "PHP",
-        url: "https://cdn2.iconfinder.com/data/icons/designer-skills/128/code-programming-php-software-develop-command-language-512.png",
-    },
-    {
-        id: "3",
-        category: "React",
-        url: "https://cdn4.iconfinder.com/data/icons/logos-3/600/React.js_logo-512.png"
-    },
-    {
-        id: "4",
-        category: "JavaScript",
-        url: "https://static.vecteezy.com/system/resources/previews/027/127/463/non_2x/javascript-logo-javascript-icon-transparent-free-png.png"
-    },
-    
-    {
-        id: "5",
-        category: "Bootstrap",
-        url: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Bootstrap_logo.svg/2560px-Bootstrap_logo.svg.png"
-    },
-    {
-        id: "6",
-        category: "Figma",
-        url: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Figma-logo.svg/1200px-Figma-logo.svg.png",
-    },
-    {
-        id: "7",
-        category: "Adobe XD",
-        url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Adobe_XD_CC_icon.svg/2101px-Adobe_XD_CC_icon.svg.png"
-    },
-    {
-        id: "8",
-        category: "Adobe Photoshop",
-        url: "https://logodownload.org/wp-content/uploads/2019/10/adobe-photoshop-logo.png"
-    },
-    {
-        id: "9",
-        category: "Google Ads",
-        url: "https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/google-ads-icon.png"
-    },
-    {
-        id: "10",
-        category: "SEO Schemas",
-        url: "https://registry.npmmirror.com/@lobehub/icons-static-png/latest/files/dark/google-color.png"
-    }
-];
+m---
+const { stack } = Astro.props;
 ---
 
-<section class="stack container-fluid px-0 mx-0 h-100">
-    <div class="row g-3 row-cols-6 row-cols-md-5 row-cols-lg-6 flex-center h-100">
+<section class="stack container-fluid px-0 mx-0 h-100 d-flex align-items-center">
+    <div class="row g-2 row-cols-6 row-cols-md-5 row-cols-lg-6 flex-center">
         {
             stack &&
                 stack.map((item) => (
@@ -82,6 +25,7 @@ const stack = [
     .stack-image {
         max-height: 80%;
         max-width: 100%;
+        max-height: 60px;
         opacity: 0.4;
         transition: opacity 0.3s ease-in-out, transform 0.1s ease-in-out;
         position: relative;

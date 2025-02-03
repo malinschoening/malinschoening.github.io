@@ -1,0 +1,92 @@
+---
+
+---
+
+<div
+    class="my-5 container-fluid py-3 py-md-4 py-lg-5 d-flex justify-content-center position-relative"
+>
+    <img
+        src="/public/img/amina-desktop.jpg"
+        class="fade-in-lazy desktop-bg position-absolute"
+        alt="Desktop version desktop"
+    />
+    <div class="col-md-6 offset-md-3 fade-in-lazy">
+        <h2>Catering Portfolio</h2>
+        <p>
+            I designed and developed a simple one-page website for a local
+            catering business using React. The goal was to create an engaging
+            online presence where potential clients could easily find
+            information and get in touch.
+        </p>
+        <p>
+            I hosted the site using Loopia and I used FileZilla for file
+            transfers. The project helped me sharpen my front-end development
+            skills, work with client requirements, and gain hands-on experience
+            in web hosting.
+        </p>
+        <p>
+            This experience reinforced my ability to create clean, responsive
+            designs while keeping the process efficient and user-friendly. Check
+            it out <a target="_blank" href="https://aminasmakar.se">here</a>!
+        </p>
+    </div>
+</div>
+<style>
+    .mobile,
+    .tablet,
+    .desktop {
+        width: auto;
+        object-fit: contain;
+    }
+    .mobile {
+        max-height: 400px;
+    }
+    .desktop {
+        max-height: 300px;
+    }
+    .tablet {
+        max-height: 300px;
+    }
+    .slideshow-container {
+        position: relative;
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .slideshow {
+        position: absolute;
+        width: 100%;
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+    }
+
+    .slideshow.active {
+        opacity: 1;
+    }
+    .desktop-bg {
+        border-radius: var(--border-radius);
+        z-index: -1;
+        top: 50%; 
+        left: -5%;
+        opacity: 0.3;
+        width: 200vw;
+        height: auto;
+        transform: rotate(4deg) translateY(-50%);
+        display: block;
+        -webkit-mask-image: linear-gradient(
+            to right,
+            rgba(0, 0, 0, 1) 5%,
+            rgba(0, 0, 0, 0) 40%
+        );
+        mask-image: linear-gradient(
+            to right,
+            rgba(0, 0, 0, 1) 5%,
+            rgba(0, 0, 0, 0) 60%
+        );
+    }
+    @media(min-width: 992px){
+        .desktop-bg {
+            width: 100vw;
+        }
+    }
+</style>
